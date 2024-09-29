@@ -1,4 +1,4 @@
-package org.example.leetcode;
+package org.example.questions;
 
 public class Pow {
     public static void main(String[] args) {
