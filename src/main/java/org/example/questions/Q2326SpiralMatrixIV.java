@@ -2,7 +2,7 @@ package org.example.questions;
 
 import org.example.Main;
 
-public class A2326SpiralMatrixIV {
+public class Q2326SpiralMatrixIV {
     public static void main(String[] args) {
         ListNode ln = null;
         for (int i = 0; i < 9; i++) {

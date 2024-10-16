@@ -5,9 +5,9 @@ plugins {
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
-application {
-    mainClassName = 'org.example.stack.NextGraterNumber'  // Replace with your main class
-}
+//application {
+//    mainClassName = 'org.example.stack.NextGraterNumber'  // Replace with your main class
+//}
 
 repositories {
     mavenCentral()

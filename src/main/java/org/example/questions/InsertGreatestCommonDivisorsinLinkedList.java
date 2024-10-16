@@ -2,7 +2,7 @@ package org.example.questions;
 
 import org.example.Main;
 
-import static org.example.questions.A2326SpiralMatrixIV.ListNode;
+import static org.example.questions.Q2326SpiralMatrixIV.ListNode;
 
 public class InsertGreatestCommonDivisorsinLinkedList {
     public static void main(String[] args) {
