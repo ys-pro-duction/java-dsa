@@ -7,13 +7,14 @@ import java.util.Arrays;
 public class MergeSort {
     static int count1 = 0;
     static int count2 = 0;
+
     public static void main(String[] args) {
-        int[] arr = {498, 496, 98, 98, 85, 14, 9, 9, 8, 8, 8, 7, 6, 6, 5, 4, 4, 4, 4, 4, 3, 2, 2, 2, 1, 0};
+        int[] arr = {7, 8, 9, 1, 2, 3};
+        mergeSort2(arr, 0, arr.length - 1);
+        Main.printIntArray(arr);
         int[] result = mergeSort(arr);
         Main.printIntArray(result);
-        mergeSort2(arr,0, arr.length-1);
-        Main.printIntArray(arr);
-        System.out.printf("\n1: %d, 2: %d",count1,count2);
+        System.out.printf("\n1: %d, 2: %d", count1, count2);
     }
 
     public static void mergeSort2(int[] arr, int start, int end) {
@@ -22,7 +23,7 @@ public class MergeSort {
         int mid = start + (end - start) / 2;
         mergeSort2(arr, start, mid);
         mergeSort2(arr, mid + 1, end);
-        int i = 0;
+        int i = start;
         int j = mid + 1;
         while (i <= mid && j <= end) {
             if (arr[i] < arr[j]) {

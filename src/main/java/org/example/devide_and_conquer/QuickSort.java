@@ -3,8 +3,9 @@ package org.example.devide_and_conquer;
 import org.example.Main;
 
 public class QuickSort {
+
     public static void main(String[] args) {
-        int[] arr = {54, 564, 3, 12, 3, 5};
+        int[] arr = {2, 4, 1, 3, 5};
         quickSort(arr, 0, arr.length - 1);
 //        partioning(arr, 0, arr.length - 1);
         Main.printIntArray(arr);

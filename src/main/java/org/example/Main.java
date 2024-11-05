@@ -42,4 +42,14 @@ public class Main {
         }
         System.out.println();
     }
+
+    public static void print2DArr(char[][] arr) {
+        for (char[] i : arr) {
+            System.out.println();
+            for (char j : i) {
+                System.out.print(j + " ");
+            }
+        }
+        System.out.println();
+    }
 }
