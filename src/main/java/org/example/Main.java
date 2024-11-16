@@ -10,7 +10,6 @@ public class Main {
         Integer a[] = {5};
     }
 
-
     public static boolean mEquals(String s, Object anObject) {
         if (s == anObject) {
             return true;
