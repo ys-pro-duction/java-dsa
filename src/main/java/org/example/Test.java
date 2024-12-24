@@ -18,7 +18,7 @@ public class Test extends JFrame {
 
     public Test() {
         setTitle("Random Line Drawer");
-        setSize(512, 512);
+        setSize(1200, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setBackground(Color.BLACK);
@@ -41,11 +41,11 @@ public class Test extends JFrame {
                 }
             }
         });
-//        new Timer(5000, e1 -> {
-//            nameIdx = 0;
-//            oldX = name[0][0];
-//            oldY = name[0][1];
-//        }).start();
+        new Timer(5000, e1 -> {
+            nameIdx = 0;
+            oldX = name[0][0];
+            oldY = name[0][1];
+        }).start();
         HashMap<Integer, Integer> old1 = new HashMap<>(Map.of(0, 0, 1, 0, 2, 0, 3, 0));
         HashMap<Integer, Integer> old2 = new HashMap<>(Map.of(0, 800, 1, 0, 2, 800, 3, 0));
         HashMap<Integer, Integer> old3 = new HashMap<>(Map.of(0, 0, 1, 600, 2, 0, 3, 600));
@@ -67,7 +67,7 @@ public class Test extends JFrame {
                 }).start();
             }
         }).start();
-//        timer.start();
+        timer.start();
     }
 
     public static void main(String[] args) {
@@ -106,7 +106,7 @@ class DrawingPanel extends JPanel {
         int y2 = random.nextInt(getHeight());
         oldX = x2;
         oldY = y2;
-        g.setColor((y2 < getHeight() / 3) ? Color.ORANGE : (y2 < (getHeight() / 3) * 2) ? Color.WHITE : Color.GREEN);
+        g.setColor(new Color(random.nextInt(256),random.nextInt(256),random.nextInt(256)));
         g.drawLine(x1, y1, x2, y2);
         g.dispose();
     }
@@ -130,7 +130,7 @@ class DrawingPanel extends JPanel {
         if (y2 > getHeight()) y2 = getHeight();
         old.put(0, x2);
         old.put(1, y2);
-        g.setColor((y2 < getHeight() / 3) ? Color.ORANGE : (y2 < (getHeight() / 3) * 2) ? Color.WHITE : Color.GREEN);
+        g.setColor(new Color(random.nextInt(256),random.nextInt(256),random.nextInt(256)));
         g.drawLine(x1, y1, x2, y2);
 //        g.drawLine(x1 + 1, y1 + 1, x2 + 1, y2 + 1);
         g.dispose();

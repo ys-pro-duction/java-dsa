@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class CountingSort {
     public static void main(String[] args) {
-        int[] arr = {100,84,16,72,69,96,24,62,57,56,96,24,62,57,56,89,55,49,5,57,56,89,55,49,57,86,28,9,62,57,56,89,55,49,57,86,28,95,24,6};
+        int[] arr = {100, 84, 16, 72, 69, 96, 24, 62, 57, 56, 96, 24, 62, 57, 56, 89, 55, 49, 5, 57, 56, 89, 55, 49, 57, 86, 28, 9, 62, 57, 56, 89, 55, 49, 57, 86, 28, 95, 24, 6};
         int max = 100;
         System.out.println(Arrays.toString(arr));
         countingSort(arr, max);
@@ -13,9 +13,6 @@ public class CountingSort {
 
     /**
      * Counting sort O(n^2)
-     *
-     * @param arr
-     * @param max
      */
     public static void countingSort(int[] arr, int max) {
         int[] count = new int[max + 1];

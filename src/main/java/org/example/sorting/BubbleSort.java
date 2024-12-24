@@ -12,36 +12,33 @@ public class BubbleSort {
 
     /**
      * Bubble sort O(n^2 / 2)
-     *
-     * @param arr
+     * Basic optimized
      */
     public static void bubbleSort(int[] arr) {
-        int swaps = 0;
-        for (int i = 0; i < arr.length -1; i++) {
-            if (i == 1) if (swaps == 0) return;
-            for (int j = 0; j < arr.length - i - 1; j++) {
+        for (int i = 0; i < arr.length; i++) {
+            boolean swaped = false;
+            for (int j = 0; j < arr.length - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j];
+                    int tmp = arr[j];
                     arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                    swaps++;
+                    arr[j + 1] = tmp;
+                    swaped = true;
                 }
             }
+            if (!swaped) break;
         }
     }
 
     /**
      * Bubble sort O(n^2)
-     *
-     * @param arr
      */
     public static void bubbleSort2(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if (arr[i] < arr[j]) {
-                    int temp = arr[j];
-                    arr[j] = arr[i];
-                    arr[i] = temp;
+            for (int j = 0; j < arr.length - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
                 }
             }
         }

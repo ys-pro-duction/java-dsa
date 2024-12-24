@@ -1,4 +1,4 @@
-package org.example.devide_and_conquer;
+package org.example.sorting;
 
 import org.example.Main;
 
@@ -13,11 +13,16 @@ public class QuickSort {
 
     public static void quickSort(int[] arr, int start, int end) {
         if (start > end) return;
-        int idx = partionaling(arr, start, end);
+        int idx = partionaling2(arr, start, end);
         quickSort(arr, start, idx - 1);
         quickSort(arr, idx + 1, end);
     }
 
+    /**
+     * Average Case  O(nlogn),
+     * Wrost Case O(n^2)
+     */
+// Extra space
     private static int partionaling(int[] arr, int start, int end) {
         int[] less = new int[end - start + 1];
         int[] grater = new int[end - start + 1];
@@ -38,5 +43,23 @@ public class QuickSort {
             arr[mainIdx++] = grater[i];
         }
         return returnIdx;
+    }
+
+    private static int partionaling2(int[] arr, int start, int end) {
+        int privot = arr[end];
+        int j = start - 1;
+        for (int i = start; i < end; i++) {
+            if (arr[i] > privot) {
+                j++;
+                int tmp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = tmp;
+            }
+        }
+        j++;
+        int tmp = arr[j];
+        arr[j] = arr[start];
+        arr[start] = tmp;
+        return j;
     }
 }

@@ -12,17 +12,16 @@ public class SelectionSort {
 
     /**
      * Selection sort O(n^2)
-     * @param arr
      */
     private static void selectionSort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            int min = i;
+            int minIndex = i;
             for (int j = i; j < arr.length; j++) {
-                if (arr[min] > arr[j]) min = j;
+                if (arr[minIndex] > arr[j]) minIndex = j;
             }
-            int temp = arr[i];
-            arr[i] = arr[min];
-            arr[min] = temp;
+            int tmp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = tmp;
         }
     }
 }
