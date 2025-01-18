@@ -15,6 +15,6 @@ public class CountNodeOfTree {
 
     public static int countNode(Node root) {
         if (root == null) return 0;
-        return countNode(root.leftChild) + countNode(root.rightChild) + 1;
+        return countNode(root.left) + countNode(root.right) + 1;
     }
 }

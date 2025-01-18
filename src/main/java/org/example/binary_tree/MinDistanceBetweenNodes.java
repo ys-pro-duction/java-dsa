@@ -6,8 +6,8 @@ public class MinDistanceBetweenNodes {
     private static Node findAncester(Node root, int n1, int n2) {
         if (root == null) return null;
         if (root.data == n1 || root.data == n2) return root;
-        Node left = findAncester(root.leftChild, n1, n2);
-        Node right = findAncester(root.rightChild, n1, n2);
+        Node left = findAncester(root.left, n1, n2);
+        Node right = findAncester(root.right, n1, n2);
         if (left == null) return right;
         if (right == null) return left;
         return root;
@@ -16,8 +16,8 @@ public class MinDistanceBetweenNodes {
     private static int findDistance(Node root, int n1, int n2) {
         if (root == null) return 0;
         if (root.data == n1 || root.data == n2) return 1;
-        int left = findDistance(root.leftChild, n1, n2);
-        int right = findDistance(root.rightChild, n1, n2);
+        int left = findDistance(root.left, n1, n2);
+        int right = findDistance(root.right, n1, n2);
         if (left > -1 && right > -1) return left + right;
         if (left > -1) return left + 1;
         if (right > -1) return right + 1;

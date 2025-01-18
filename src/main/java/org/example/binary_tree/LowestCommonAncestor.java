@@ -6,8 +6,8 @@ public class LowestCommonAncestor {
     private static boolean printLowestCommonParent(Node root, int keyOne, int keyTwo) {
         if (root == null) return false;
         boolean founded = (keyOne == root.data || keyTwo == root.data);
-        boolean leftFounded = printLowestCommonParent(root.leftChild, keyOne, keyTwo);
-        boolean rightFounded = printLowestCommonParent(root.rightChild, keyOne, keyTwo);
+        boolean leftFounded = printLowestCommonParent(root.left, keyOne, keyTwo);
+        boolean rightFounded = printLowestCommonParent(root.right, keyOne, keyTwo);
         if (leftFounded && rightFounded) System.out.println("Common lowest parent = " + root.data);
         return leftFounded || rightFounded || founded;
     }
@@ -17,8 +17,8 @@ public class LowestCommonAncestor {
         if (keyOne == root.data || keyTwo == root.data) {
             return root;
         }
-        Node leftFounded = printLowestCommonParent2(root.leftChild, keyOne, keyTwo);
-        Node rightFounded = printLowestCommonParent2(root.rightChild, keyOne, keyTwo);
+        Node leftFounded = printLowestCommonParent2(root.left, keyOne, keyTwo);
+        Node rightFounded = printLowestCommonParent2(root.right, keyOne, keyTwo);
         if (leftFounded == null) return rightFounded;
         if (rightFounded == null) return leftFounded;
         return root;

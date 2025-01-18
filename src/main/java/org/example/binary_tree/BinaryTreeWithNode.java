@@ -16,8 +16,8 @@ public class BinaryTreeWithNode {
         // PreOrder  1 2 4 5 3 6
         // InOrder   4 2 5 1 3 6
         // PostOrder 4 5 2 6 3 1
-        printBinaryTree(root.leftChild);
-        printBinaryTree(root.rightChild);
+        printBinaryTree(root.left);
+        printBinaryTree(root.right);
         System.out.print(" " + root.data);
     }
 
@@ -35,16 +35,16 @@ public class BinaryTreeWithNode {
                 if (!queue.isEmpty()) queue.add(null);
             } else {
                 System.out.print(" " + currentNode.data);
-                if (currentNode.leftChild != null) queue.add(currentNode.leftChild);
-                if (currentNode.rightChild != null) queue.add(currentNode.rightChild);
+                if (currentNode.left != null) queue.add(currentNode.left);
+                if (currentNode.right != null) queue.add(currentNode.right);
             }
         }
     }
 
-    static class Node {
-        public Node leftChild;
-        public Node rightChild;
-        int data;
+    public static class Node {
+        public Node left;
+        public Node right;
+        public int data;
         int idx;// for one queston
 
         public Node(int data) {
@@ -64,8 +64,8 @@ public class BinaryTreeWithNode {
                 return null;
             }
             Node newNode = new Node(nodes[idx]);
-            newNode.leftChild = buildBinaryTree(nodes);
-            newNode.rightChild = buildBinaryTree(nodes);
+            newNode.left = buildBinaryTree(nodes);
+            newNode.right = buildBinaryTree(nodes);
             return newNode;
         }
     }

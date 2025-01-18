@@ -14,32 +14,32 @@ public class DiamiterOfBT {
     }
 
     public static int diameter(Node root) {
-        int left = findDiameterRecursively(root.leftChild);
-        int right = findDiameterRecursively(root.rightChild);
+        int left = findDiameterRecursively(root.left);
+        int right = findDiameterRecursively(root.right);
         return left + right + 1;
     }
 
     public static int findDiameterRecursively(Node root) {
         if (root == null) return 0;
-        int left = findDiameterRecursively(root.leftChild);
-        int right = findDiameterRecursively(root.rightChild);
+        int left = findDiameterRecursively(root.left);
+        int right = findDiameterRecursively(root.right);
         return Math.max(left, right) + 1;
     }
 
     public static int tuteApproch1Diamter(Node root) {
         if (root == null) return 0;
-        int leftDia = tuteApproch1Diamter(root.leftChild);
-        int leftHeight = HeightOfTree.treeHeight(root.leftChild);
-        int rightDia = tuteApproch1Diamter(root.rightChild);
-        int rightHeight = HeightOfTree.treeHeight(root.rightChild);
+        int leftDia = tuteApproch1Diamter(root.left);
+        int leftHeight = HeightOfTree.treeHeight(root.left);
+        int rightDia = tuteApproch1Diamter(root.right);
+        int rightHeight = HeightOfTree.treeHeight(root.right);
         int fromRoot = leftHeight + rightHeight + 1;
         return Math.max(fromRoot, Math.max(leftDia, rightDia));
     }
 
     public static TreeInfo tuteApproch2Diamter(Node root) {
         if (root == null) return new TreeInfo(0, 0);
-        TreeInfo leftInfo = tuteApproch2Diamter(root.leftChild);
-        TreeInfo rightInfo = tuteApproch2Diamter(root.rightChild);
+        TreeInfo leftInfo = tuteApproch2Diamter(root.left);
+        TreeInfo rightInfo = tuteApproch2Diamter(root.right);
         int thruRoot = leftInfo.height + rightInfo.height + 1;
         return new TreeInfo(Math.max(leftInfo.height, rightInfo.height) + 1,
                 Math.max(thruRoot, Math.max(leftInfo.height, rightInfo.height)));

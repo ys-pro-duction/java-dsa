@@ -18,12 +18,12 @@ public class FindSubtreeExistance {
         if (main == sub) return true;
         if (main == null || sub == null) return false;
         if (main.data == sub.data) {
-            boolean left = subtreeExist(main.leftChild, sub.leftChild);
-            boolean right = subtreeExist(main.rightChild, sub.rightChild);
+            boolean left = subtreeExist(main.left, sub.left);
+            boolean right = subtreeExist(main.right, sub.right);
             if (left && right) return true;
         }
-        boolean left = subtreeExist(main.leftChild, sub);
-        boolean right = subtreeExist(main.rightChild, sub);
+        boolean left = subtreeExist(main.left, sub);
+        boolean right = subtreeExist(main.right, sub);
         return left || right;
     }
 }

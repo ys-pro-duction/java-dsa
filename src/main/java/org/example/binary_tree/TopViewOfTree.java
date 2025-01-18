@@ -29,15 +29,15 @@ public class TopViewOfTree {
             Node cuNode = queue.remove();
             if (cuNode != null) {
                 if (!map.containsKey(cuNode.idx)) map.put(cuNode.idx, cuNode.data);
-                if (cuNode.leftChild != null) {
-                    cuNode.leftChild.idx = cuNode.idx - 1;
+                if (cuNode.left != null) {
+                    cuNode.left.idx = cuNode.idx - 1;
                     min = Math.min(min, cuNode.idx - 1);
-                    queue.add(cuNode.leftChild);
+                    queue.add(cuNode.left);
                 }
-                if (cuNode.rightChild != null) {
-                    cuNode.rightChild.idx = cuNode.idx + 1;
+                if (cuNode.right != null) {
+                    cuNode.right.idx = cuNode.idx + 1;
                     max = Math.max(max, cuNode.idx + 1);
-                    queue.add(cuNode.rightChild);
+                    queue.add(cuNode.right);
                 }
             }
         }

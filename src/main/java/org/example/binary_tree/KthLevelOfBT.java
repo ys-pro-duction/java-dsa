@@ -22,8 +22,8 @@ public class KthLevelOfBT {
     private static void printKthLevelRecursive(Node root, int level, int i) {
         if (root == null || level < i) return;
         if (i == level) System.out.print(" " + root.data);
-        printKthLevelRecursive(root.leftChild, level, ++i);
-        printKthLevelRecursive(root.rightChild, level, i);
+        printKthLevelRecursive(root.left, level, ++i);
+        printKthLevelRecursive(root.right, level, i);
     }
 
     private static void printKthLevel(Node root, int level) {
@@ -40,8 +40,8 @@ public class KthLevelOfBT {
                 }
             } else {
                 if (level == lCount) System.out.print(" " + cuNode.data);
-                if (cuNode.leftChild != null) queue.add(cuNode.leftChild);
-                if (cuNode.rightChild != null) queue.add(cuNode.rightChild);
+                if (cuNode.left != null) queue.add(cuNode.left);
+                if (cuNode.right != null) queue.add(cuNode.right);
             }
         }
     }
