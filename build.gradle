@@ -11,12 +11,22 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    flatDir {
+        dirs("libs")
+    }
 }
 
 dependencies {
     implementation 'junit:junit:4.13.1'
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+//    implementation files("./libs/sherpaonnxx.jar")
+//    compile fileTree(include: ["*.jar"], dir: "libs")
+    implementation(":sherpa-onnx")
+    implementation("com.google.code.gson:gson:2.13.1")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
+
 }
 
 test {

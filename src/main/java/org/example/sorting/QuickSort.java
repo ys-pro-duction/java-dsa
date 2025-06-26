@@ -45,21 +45,20 @@ public class QuickSort {
         return returnIdx;
     }
 
-    private static int partionaling2(int[] arr, int start, int end) {
-        int privot = arr[end];
-        int j = start - 1;
-        for (int i = start; i < end; i++) {
-            if (arr[i] > privot) {
+    private static int partionaling2(int arr[], int st, int en){
+        int pivote = arr[en];
+        int j = st-1;
+        for (int i = st; i < en; i++) {
+            if (arr[i] < pivote){
                 j++;
-                int tmp = arr[j];
-                arr[j] = arr[i];
-                arr[i] = tmp;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
         }
         j++;
-        int tmp = arr[j];
-        arr[j] = arr[start];
-        arr[start] = tmp;
+        arr[en] = arr[j];
+        arr[j] = pivote;
         return j;
     }
 }

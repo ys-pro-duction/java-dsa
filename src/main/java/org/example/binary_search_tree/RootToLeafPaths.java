@@ -14,7 +14,7 @@ public class RootToLeafPaths {
         }
         printAllPaths(root.left, path);
         printAllPaths(root.right, path);
-        path.removeLast();
+        path.remove(path.size() - 1);
     }
 
     public static void main(String[] args) {
