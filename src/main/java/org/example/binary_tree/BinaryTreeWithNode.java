@@ -52,7 +52,7 @@ public class BinaryTreeWithNode {
         }
     }
 
-    static class BinaryTree {
+    public static class BinaryTree {
         private int idx = -1;
 
         public Node buildBinaryTree(int[] nodes) {
