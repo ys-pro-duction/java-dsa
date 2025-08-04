@@ -1,32 +1,39 @@
 package org.example.graph;
 
+import java.util.ArrayList;
+
 public class HasPath {
-
     public static void main(String[] args) {
-        Graph graph = GraphUse.addDummyDataToGraphAndGet();
-        int to = 6;
-        boolean isHasPath = hasPath(graph, to);
-        System.out.println();
-        System.out.println("Path is " + (isHasPath ? "Exist" : "not Exist"));
+        int size = 6;
+        ArrayList<Integer>[] graph = new ArrayList[6];
+        for (int i = 0; i < size; i++) {
+            graph[i] = new ArrayList<>();
+        }
+        graph[0].add(0);
+        graph[0].add(3);
+        graph[2].add(2);
+        graph[2].add(3);
+        graph[3].add(3);
+        graph[3].add(1);
+        graph[4].add(4);
+        graph[4].add(0);
+        graph[4].add(1);
+        graph[5].add(5);
+        graph[5].add(0);
+        graph[5].add(2);
+        int src = 5;
+        int dest = 1;
+        printAllPathsFromSourceToDes(graph, src, dest, "");
     }
 
-    private static boolean hasPath(Graph graph, int to) {
-        int start = 0;
-        boolean[] visited = new boolean[graph.getV()];
-        return isPathExist(start, graph, visited, to);
-    }
-
-    private static boolean isPathExist(int start, Graph graph, boolean[] visited, int to) {
-        if (start == to) {
-            return true;
+    private static void printAllPathsFromSourceToDes(ArrayList<Integer>[] graph, int src, int dest, String path) {
+        if (src == dest) {
+            System.out.println(path + dest);
+            return;
         }
-        visited[start] = true;
-        for (Graph.Edge edge : graph.getEdge(start)) {
-            if (!visited[edge.dest()] && isPathExist(edge.dest(), graph, visited, to)) {
-                System.out.print(edge.dest() + ",");
-                return true;
-            }
+        ArrayList<Integer> vertex = graph[src];
+        for (int i = 1; i < vertex.size(); i++) {
+            printAllPathsFromSourceToDes(graph, vertex.get(i), dest, path + src);
         }
-        return false;
     }
 }
